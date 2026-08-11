@@ -346,6 +346,99 @@ input, select, textarea {
 
 .amounts button.active { background: var(--orange); }
 
+.impact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.72);
+  overflow: hidden;
+}
+
+.impact-modal[hidden] { display: none; }
+
+.impact-panel {
+  position: relative;
+  z-index: 2;
+  width: min(780px, 100%);
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  border: 2px solid var(--black);
+  background: var(--white);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+.impact-panel h2 {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.impact-copy {
+  margin: 1rem 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.impact-stat {
+  border: 2px solid var(--black);
+  background: var(--orange);
+  color: var(--black);
+  padding: 1rem;
+}
+
+.impact-stat:nth-child(2) {
+  background: var(--black);
+  color: var(--white);
+}
+
+.impact-stat:nth-child(2) .stat-value,
+.impact-stat:nth-child(2) h3 {
+  color: var(--white);
+}
+
+.impact-stat:nth-child(3) {
+  background: var(--off-white);
+}
+
+.modal-close {
+  float: right;
+  border: 2px solid var(--black);
+  background: var(--white);
+  padding: 0.5rem 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -2rem;
+  width: 0.7rem;
+  height: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  animation: confettiFall 1.9s ease-out forwards;
+}
+
+@keyframes confettiFall {
+  0% { translate: 0 -2rem; opacity: 1; }
+  100% { translate: 0 105vh; opacity: 0.85; }
+}
+
 .site-footer {
   border-top: 2px solid var(--black);
   padding: 2rem clamp(1rem, 4vw, 2rem);
@@ -400,4 +493,12 @@ input, select, textarea {
   #map, .map-message, .resource-list { min-height: 380px; max-height: none; }
   .section-heading { align-items: start; flex-direction: column; }
   .amounts { grid-template-columns: repeat(2, 1fr); }
+  .impact-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti-piece {
+    animation: none;
+    display: none;
+  }
 }
