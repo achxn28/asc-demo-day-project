@@ -1,10 +1,10 @@
 export function header(active) {
   const links = [
     ['index.html', 'Home', 'home'],
-    ['story.html', 'The Story', 'story'],
-    ['resources.html', 'Resources', 'resources'],
-    ['visibility.html', 'Visibility', 'visibility'],
-    ['sources.html', 'Methodology', 'sources']
+    ['story.html', 'Data', 'story'],
+    ['resources.html', 'Find Resources', 'resources'],
+    ['visibility.html', 'Dashboard', 'visibility'],
+    ['sources.html', 'Sources', 'sources']
   ];
 
   const navLinks = links
@@ -17,7 +17,7 @@ export function header(active) {
       <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>Menu</button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         ${navLinks}
-        <a class="donate-link" href="donate.html"${active === 'donate' ? ' aria-current="page"' : ''}>Donate</a>
+        <a class="donate-link" href="donate.html"${active === 'donate' ? ' aria-current="page"' : ''}>Donate Demo</a>
       </nav>
     </header>
   `;
@@ -32,10 +32,10 @@ export function footer() {
           <p>Making public homelessness and resource data easier to understand, inspect, and act on.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="resources.html">Resources</a>
-          <a href="visibility.html">Visibility</a>
-          <a href="sources.html">Methodology</a>
-          <a href="donate.html">Donate</a>
+          <a href="resources.html">Find Resources</a>
+          <a href="visibility.html">Dashboard</a>
+          <a href="sources.html">Sources</a>
+          <a href="donate.html">Donate Demo</a>
         </nav>
       </div>
     </footer>

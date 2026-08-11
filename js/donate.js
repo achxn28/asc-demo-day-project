@@ -31,19 +31,22 @@ document.querySelector('#donation-form').addEventListener('submit', (event) => {
   const people = Math.max(1, Math.floor(selectedAmount / scenarioAssumptions.personSupportDollars));
   const meals = Math.max(1, Math.floor(selectedAmount / scenarioAssumptions.mealDollars));
   const clothingItems = Math.max(1, Math.floor(selectedAmount / scenarioAssumptions.clothingDollars));
+  const receiptId = `BLA-${Date.now().toString().slice(-6)}`;
 
   document.querySelector('#donation-result').innerHTML = `
-    <h2>Prototype confirmation</h2>
-    <p><strong>Your prototype donation:</strong> $${selectedAmount.toLocaleString()}</p>
-    <p>A popup dashboard opened with a sample impact scenario.</p>
-    <hr />
-    <p>Context this dashboard could track beside real partner reporting:</p>
-    <p>${city.totalHomelessPopulation.toLocaleString()} estimated people experiencing homelessness in the City of Los Angeles.</p>
-    <p>${unshelteredPercent(summary).toFixed(1)}% of people experiencing homelessness in the City were unsheltered.</p>
+    <p class="eyebrow">Prototype receipt</p>
+    <h2>$${selectedAmount.toLocaleString()}</h2>
+    <p><strong>Receipt ID:</strong> ${receiptId}</p>
+    <p>This mock receipt opened an impact scenario dashboard.</p>
+    <div class="receipt-actions">
+      <button type="button">Share</button>
+      <button type="button">Download</button>
+    </div>
+    <p class="receipt-context">${city.totalHomelessPopulation.toLocaleString()} estimated people experiencing homelessness in the City of Los Angeles.</p>
     <span class="source">Source: LAHSA 2026 Greater Los Angeles Homeless Count</span>
   `;
 
-  impactCopy.textContent = `A $${selectedAmount.toLocaleString()} prototype donation could be reported as helping ${people.toLocaleString()} people, buying ${meals.toLocaleString()} meals, and buying ${clothingItems.toLocaleString()} clothing items in this demo scenario.`;
+  impactCopy.textContent = `Receipt ${receiptId}: a $${selectedAmount.toLocaleString()} prototype donation could be reported as helping ${people.toLocaleString()} people, buying ${meals.toLocaleString()} meals, and buying ${clothingItems.toLocaleString()} clothing items in this demo scenario.`;
   impactGrid.innerHTML = [
     [`${people.toLocaleString()}`, 'people helped', `$${scenarioAssumptions.personSupportDollars} scenario support unit`],
     [`${meals.toLocaleString()}`, 'meals bought', `$${scenarioAssumptions.mealDollars} scenario meal unit`],

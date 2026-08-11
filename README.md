@@ -15,11 +15,11 @@ resource visibility in Los Angeles.
 ## Pages
 
 - `index.html`: project overview
-- `story.html`: LAHSA 2026 homelessness data visualizations
-- `resources.html`: resource map and filterable service list
-- `visibility.html`: calculated visibility dashboard
-- `sources.html`: source manifest, methodology, and audit checks
-- `donate.html`: clearly labeled prototype donation flow
+- `story.html`: Data page with LAHSA 2026 visualizations
+- `resources.html`: Find Resources tool with filters, map, and actions
+- `visibility.html`: Dashboard with calculated public-data indicators
+- `sources.html`: Sources, methodology, and audit checks
+- `donate.html`: Donate Demo with a prototype receipt flow
 
 ## Data
 

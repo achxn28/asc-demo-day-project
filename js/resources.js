@@ -7,6 +7,7 @@ const serviceData = await getJson('./data/la-service-locations.geojson');
 const list = document.querySelector('#resource-list');
 const search = document.querySelector('#resource-search');
 const type = document.querySelector('#resource-type');
+const count = document.querySelector('#resource-count');
 const mapNode = document.querySelector('#map');
 let map;
 let markers = [];
@@ -30,22 +31,44 @@ function markerColor(category) {
 }
 
 function renderList(features) {
+  count.textContent = `${features.length} ${features.length === 1 ? 'resource' : 'resources'}`;
+  if (!features.length) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <h3>No matching resources</h3>
+        <p>Try a broader search or choose all resource types.</p>
+      </div>
+    `;
+    return;
+  }
+
   list.innerHTML = features.map((feature, index) => {
     const props = feature.properties;
+    const address = serviceAddress(props);
+    const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+    const phone = props.phones ? props.phones.match(/\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/)?.[0] : '';
+    const website = props.url || props.link;
     return `
-      <button class="card resource-card" type="button" data-index="${index}">
-        <span class="badge">${categoryLabel(props.category)}</span>
-        <h3>${props.name}</h3>
-        <p>${serviceAddress(props)}</p>
-        <p>${props.description || ''}</p>
+      <article class="resource-card" data-index="${index}">
+        <button class="resource-main" type="button">
+          <span class="badge">${categoryLabel(props.category)}</span>
+          <h3>${props.name}</h3>
+          <p class="resource-address">${address}</p>
+          <p>${props.description || ''}</p>
+        </button>
+        <div class="resource-actions">
+          ${phone ? `<a href="tel:${phone.replace(/[^0-9]/g, '')}">Call</a>` : ''}
+          ${website ? `<a href="${website.startsWith('http') ? website : `https://${website}`}">Website</a>` : ''}
+          <a href="${directions}">Directions</a>
+        </div>
         <span class="source">Source field: ${props.source}. Current availability: contact provider / 211 LA.</span>
-      </button>
+      </article>
     `;
   }).join('');
 
-  list.querySelectorAll('[data-index]').forEach((card) => {
+  list.querySelectorAll('.resource-main').forEach((card) => {
     card.addEventListener('click', () => {
-      const feature = features[Number(card.dataset.index)];
+      const feature = features[Number(card.closest('[data-index]').dataset.index)];
       map?.flyTo({ center: feature.geometry.coordinates, zoom: 13 });
       markers.find((item) => item.feature.id === feature.id)?.marker.togglePopup();
     });

@@ -7,6 +7,8 @@
   --text: #333;
   --muted: #6f6a65;
   --max: 1120px;
+  --line: #191919;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -129,7 +131,7 @@ a { color: inherit; }
 }
 
 .page-hero {
-  padding: 3.5rem 0 1.5rem;
+  padding: 3rem 0 2rem;
 }
 
 .eyebrow {
@@ -149,8 +151,14 @@ h1, h2, h3 {
 }
 
 h1 { font-size: clamp(2.5rem, 7vw, 5.25rem); }
-h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.55rem, 3vw, 2.4rem); }
 h3 { font-size: 1.2rem; }
+
+.page-title {
+  max-width: 900px;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  font-weight: 950;
+}
 
 p { margin: 0; }
 
@@ -185,7 +193,7 @@ p { margin: 0; }
 .button:hover, .site-nav a:hover { transform: translateY(-1px); }
 
 .section {
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  padding: clamp(2rem, 5vw, 4rem) 0;
   border-top: 1px solid var(--gray);
 }
 
@@ -209,7 +217,7 @@ p { margin: 0; }
 .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 .card, .stat-card, .notice, .source-card {
-  border: 2px solid var(--black);
+  border: 1px solid var(--line);
   background: var(--white);
   padding: 1.1rem;
 }
@@ -217,6 +225,41 @@ p { margin: 0; }
 .card.orange, .stat-card.orange {
   background: var(--orange);
   color: var(--black);
+}
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.path-card {
+  display: grid;
+  gap: 0.65rem;
+  min-height: 190px;
+  padding: 1rem;
+  background: var(--white);
+  border-left: 0.45rem solid var(--orange);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.path-card span {
+  color: var(--orange);
+  font-weight: 950;
+}
+
+.path-card strong {
+  color: var(--black);
+  font-size: 1.08rem;
+}
+
+.feature-row {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-top: 2px solid var(--black);
+  text-decoration: none;
 }
 
 .human-story {
@@ -227,9 +270,10 @@ p { margin: 0; }
 }
 
 .story-card {
-  border: 2px solid var(--black);
+  border: 1px solid var(--line);
   background: var(--white);
   padding: clamp(1.25rem, 4vw, 2rem);
+  box-shadow: var(--shadow);
 }
 
 .story-card p + p {
@@ -267,11 +311,43 @@ p { margin: 0; }
   background: var(--white);
 }
 
-.filters {
+.resource-toolbar {
+  position: sticky;
+  top: 76px;
+  z-index: 10;
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) 180px 180px;
+  grid-template-columns: minmax(220px, 1fr) 220px minmax(160px, 0.4fr);
   gap: 0.75rem;
   margin-bottom: 1rem;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow);
+}
+
+.resource-toolbar label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 900;
+  color: var(--black);
+}
+
+.toolbar-status {
+  display: grid;
+  align-content: center;
+  gap: 0.15rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--orange);
+}
+
+.toolbar-status strong {
+  color: var(--black);
+  font-size: 1.2rem;
+}
+
+.toolbar-status span {
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 input, select, textarea {
@@ -286,7 +362,7 @@ input, select, textarea {
 
 .map-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(290px, 0.8fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.85fr);
   gap: 1rem;
 }
 
@@ -298,12 +374,18 @@ input, select, textarea {
 
 .map-message {
   min-height: 560px;
-  border: 2px solid var(--black);
-  background: var(--off-white);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(244, 101, 36, 0.1), rgba(0, 0, 0, 0.04)),
+    var(--off-white);
   display: grid;
   place-items: center;
   padding: 2rem;
   text-align: center;
+}
+
+.map-message h2 {
+  margin-bottom: 0.5rem;
 }
 
 .resource-list {
@@ -314,9 +396,54 @@ input, select, textarea {
 }
 
 .resource-card {
-  text-align: left;
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
   width: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.resource-main {
+  display: grid;
+  gap: 0.45rem;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  text-align: left;
   cursor: pointer;
+  font: inherit;
+}
+
+.resource-address {
+  color: var(--black);
+  font-weight: 900;
+}
+
+.resource-actions, .receipt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resource-actions a, .receipt-actions button {
+  border: 1px solid var(--black);
+  background: var(--off-white);
+  padding: 0.45rem 0.65rem;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.list-heading {
+  margin-bottom: 0.75rem;
+}
+
+.empty-state {
+  border: 1px dashed var(--line);
+  padding: 1rem;
+  background: var(--white);
 }
 
 .badge {
@@ -348,8 +475,49 @@ input, select, textarea {
 
 .donation-box {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.75fr);
   gap: 1rem;
+}
+
+.donation-panel, .receipt-preview {
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: var(--shadow);
+}
+
+.receipt-preview {
+  background: var(--orange);
+  color: var(--black);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.check-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--black);
+  margin-right: 0.5rem;
+}
+
+.receipt-context {
+  margin-top: 1rem;
+  font-weight: 800;
 }
 
 .amounts {
@@ -500,6 +668,9 @@ input, select, textarea {
   .two, .three, .four, .map-layout, .donation-box, .footer-inner, .human-story {
     grid-template-columns: 1fr;
   }
+  .path-grid, .resource-toolbar, .form-grid {
+    grid-template-columns: 1fr;
+  }
   .home-hero {
     min-height: 620px;
     background-position: 58% center;
@@ -510,7 +681,9 @@ input, select, textarea {
   .home-hero h2 {
     font-size: clamp(1.55rem, 8vw, 2rem);
   }
-  .filters { grid-template-columns: 1fr; }
+  .resource-toolbar {
+    position: static;
+  }
   #map, .map-message, .resource-list { min-height: 380px; max-height: none; }
   .section-heading { align-items: start; flex-direction: column; }
   .amounts { grid-template-columns: repeat(2, 1fr); }
