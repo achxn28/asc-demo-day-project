@@ -1,5 +1,5 @@
 import { mountShell } from './components.js';
-import { MAPBOX_ACCESS_TOKEN, categoryLabel, getJson, serviceAddress } from './data.js';
+import { categoryLabel, getJson, serviceAddress } from './data.js';
 
 mountShell('resources');
 
@@ -8,13 +8,13 @@ const list = document.querySelector('#resource-list');
 const search = document.querySelector('#resource-search');
 const type = document.querySelector('#resource-type');
 const count = document.querySelector('#resource-count');
-const mapNode = document.querySelector('#map');
-let map;
-let markers = [];
+const pins = document.querySelector('#map-pin-layer');
+const needTabs = document.querySelector('#need-tabs');
+let activeNeed = 'all';
 
 function filteredFeatures() {
   const query = search.value.trim().toLowerCase();
-  const selectedType = type.value;
+  const selectedType = activeNeed !== 'all' ? activeNeed : type.value;
   return serviceData.features.filter((feature) => {
     const props = feature.properties;
     const haystack = [props.name, props.city, props.description, props.category].join(' ').toLowerCase();
@@ -28,6 +28,22 @@ function markerColor(category) {
   if (category === 'shelter') return '#f46524';
   if (category === 'healthcare') return '#000000';
   return '#777777';
+}
+
+function pinPosition(feature) {
+  const [lng, lat] = feature.geometry.coordinates;
+  const bounds = {
+    west: -118.52,
+    east: -118.18,
+    south: 34.02,
+    north: 34.18
+  };
+  const x = ((lng - bounds.west) / (bounds.east - bounds.west)) * 100;
+  const y = (1 - ((lat - bounds.south) / (bounds.north - bounds.south))) * 100;
+  return {
+    x: Math.min(92, Math.max(8, x)),
+    y: Math.min(88, Math.max(10, y))
+  };
 }
 
 function renderList(features) {
@@ -60,6 +76,7 @@ function renderList(features) {
           ${phone ? `<a href="tel:${phone.replace(/[^0-9]/g, '')}">Call</a>` : ''}
           ${website ? `<a href="${website.startsWith('http') ? website : `https://${website}`}">Website</a>` : ''}
           <a href="${directions}">Directions</a>
+          <button type="button" data-source-open data-source-title="${props.name}" data-source-body="This resource record comes from the Los Angeles County Homeless Shelters and Services public feature service. Bridge LA keeps source fields visible and does not add missing availability data.">Source</button>
         </div>
         <span class="source">Source field: ${props.source}. Current availability: contact provider / 211 LA.</span>
       </article>
@@ -69,58 +86,51 @@ function renderList(features) {
   list.querySelectorAll('.resource-main').forEach((card) => {
     card.addEventListener('click', () => {
       const feature = features[Number(card.closest('[data-index]').dataset.index)];
-      map?.flyTo({ center: feature.geometry.coordinates, zoom: 13 });
-      markers.find((item) => item.feature.id === feature.id)?.marker.togglePopup();
+      highlightPin(feature.id);
     });
   });
 }
 
-function renderMarkers(features) {
-  markers.forEach(({ marker }) => marker.remove());
-  markers = [];
-  if (!map) return;
-  features.forEach((feature) => {
+function renderPins(features) {
+  pins.innerHTML = features.map((feature, index) => {
     const props = feature.properties;
-    const popup = new mapboxgl.Popup({ offset: 20 }).setHTML(`
-      <strong>${props.name}</strong>
-      <p>${serviceAddress(props)}</p>
-      <p>Current availability: contact provider / 211 LA.</p>
-    `);
-    const marker = new mapboxgl.Marker({ color: markerColor(props.category) })
-      .setLngLat(feature.geometry.coordinates)
-      .setPopup(popup)
-      .addTo(map);
-    markers.push({ marker, feature });
+    const pos = pinPosition(feature);
+    return `
+      <button class="map-pin" type="button" data-feature-id="${feature.id}" data-resource-index="${index}" style="left:${pos.x}%; top:${pos.y}%; --pin-color:${markerColor(props.category)}">
+        <span>${categoryLabel(props.category)}</span>
+      </button>
+    `;
+  }).join('');
+
+  pins.querySelectorAll('.map-pin').forEach((pin) => {
+    pin.addEventListener('click', () => {
+      const index = Number(pin.dataset.resourceIndex);
+      list.querySelector(`[data-index="${index}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      highlightPin(pin.dataset.featureId);
+    });
   });
 }
 
 function update() {
   const features = filteredFeatures();
   renderList(features);
-  renderMarkers(features);
+  renderPins(features);
 }
 
-if (MAPBOX_ACCESS_TOKEN === 'YOUR_MAPBOX_TOKEN_HERE') {
-  mapNode.outerHTML = `
-    <div class="map-message">
-      <div>
-        <h2>Mapbox token required</h2>
-        <p>Add a token in <strong>js/data.js</strong> to render the interactive map. Resource records still load in the list.</p>
-      </div>
-    </div>
-  `;
-} else {
-  mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
-  map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/light-v11',
-    center: [-118.255, 34.05],
-    zoom: 10
+function highlightPin(id) {
+  document.querySelectorAll('.map-pin').forEach((pin) => {
+    pin.classList.toggle('active', pin.dataset.featureId === String(id));
   });
-  map.addControl(new mapboxgl.NavigationControl());
-  map.on('load', update);
 }
 
 search.addEventListener('input', update);
 type.addEventListener('change', update);
+needTabs.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-need]');
+  if (!button) return;
+  activeNeed = button.dataset.need;
+  needTabs.querySelectorAll('button').forEach((item) => item.classList.toggle('active', item === button));
+  type.value = activeNeed === 'all' ? 'all' : activeNeed;
+  update();
+});
 update();

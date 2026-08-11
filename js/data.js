@@ -1,5 +1,3 @@
-export const MAPBOX_ACCESS_TOKEN = 'YOUR_MAPBOX_TOKEN_HERE';
-
 export async function getJson(path) {
   const response = await fetch(path);
   if (!response.ok) {

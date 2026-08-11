@@ -192,6 +192,17 @@ p { margin: 0; }
 .button.secondary { background: var(--white); }
 .button:hover, .site-nav a:hover { transform: translateY(-1px); }
 
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--black);
+  padding: 0;
+  font: inherit;
+  font-weight: 900;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .section {
   padding: clamp(2rem, 5vw, 4rem) 0;
   border-top: 1px solid var(--gray);
@@ -260,6 +271,38 @@ p { margin: 0; }
   padding: 1rem 0;
   border-top: 2px solid var(--black);
   text-decoration: none;
+}
+
+.resource-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.resource-mini {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.meaning-box, .trust-banner {
+  border-left: 0.45rem solid var(--orange);
+  background: var(--white);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.trust-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-left: 0.45rem solid var(--orange);
+  box-shadow: var(--shadow);
 }
 
 .human-story {
@@ -332,6 +375,31 @@ p { margin: 0; }
   color: var(--black);
 }
 
+.help-flow {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.need-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.need-tabs button {
+  border: 1px solid var(--line);
+  background: var(--white);
+  min-height: 2.7rem;
+  padding: 0.55rem 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.need-tabs button.active {
+  background: var(--orange);
+}
+
 .toolbar-status {
   display: grid;
   align-content: center;
@@ -370,6 +438,94 @@ input, select, textarea {
   min-height: 560px;
   border: 2px solid var(--black);
   background: var(--off-white);
+}
+
+.static-map {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 28% 36%, rgba(244, 101, 36, 0.35), transparent 12%),
+    radial-gradient(circle at 62% 44%, rgba(0, 0, 0, 0.12), transparent 16%),
+    linear-gradient(135deg, #fff7f1 0%, #f8f7f5 52%, #ece7df 100%);
+}
+
+.static-map::before {
+  content: "";
+  position: absolute;
+  inset: 18% 8% 14% 12%;
+  border: 2px solid rgba(0, 0, 0, 0.24);
+  transform: skew(-14deg) rotate(-6deg);
+}
+
+.map-label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 2;
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 0.4rem 0.55rem;
+  font-weight: 900;
+}
+
+.map-gridline {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.map-gridline.horizontal {
+  left: 0;
+  right: 0;
+  top: 55%;
+  height: 1px;
+}
+
+.map-gridline.vertical {
+  top: 0;
+  bottom: 0;
+  left: 52%;
+  width: 1px;
+}
+
+.map-pin-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.map-pin {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  translate: -50% -50%;
+  border: 2px solid var(--black);
+  background: var(--pin-color);
+  cursor: pointer;
+}
+
+.map-pin span {
+  position: absolute;
+  left: 1rem;
+  top: -0.35rem;
+  display: none;
+  width: max-content;
+  max-width: 12rem;
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 0.25rem 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.map-pin:hover span,
+.map-pin.active span {
+  display: block;
+}
+
+.map-pin.active {
+  outline: 4px solid rgba(244, 101, 36, 0.35);
+  scale: 1.35;
 }
 
 .map-message {
@@ -427,13 +583,14 @@ input, select, textarea {
   gap: 0.5rem;
 }
 
-.resource-actions a, .receipt-actions button {
+.resource-actions a, .resource-actions button, .receipt-actions button, .receipt-actions a {
   border: 1px solid var(--black);
   background: var(--off-white);
   padding: 0.45rem 0.65rem;
   color: var(--black);
   text-decoration: none;
   font-weight: 900;
+  font: inherit;
 }
 
 .list-heading {
@@ -518,6 +675,29 @@ input, select, textarea {
 .receipt-context {
   margin-top: 1rem;
   font-weight: 800;
+}
+
+.source-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: end;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.source-drawer[hidden] {
+  display: none;
+}
+
+.source-drawer-panel {
+  width: min(420px, 100%);
+  height: 100%;
+  overflow: auto;
+  background: var(--white);
+  border-left: 2px solid var(--black);
+  padding: 1.25rem;
+  box-shadow: -18px 0 60px rgba(0, 0, 0, 0.22);
 }
 
 .amounts {
@@ -668,7 +848,7 @@ input, select, textarea {
   .two, .three, .four, .map-layout, .donation-box, .footer-inner, .human-story {
     grid-template-columns: 1fr;
   }
-  .path-grid, .resource-toolbar, .form-grid {
+  .path-grid, .resource-toolbar, .form-grid, .resource-preview {
     grid-template-columns: 1fr;
   }
   .home-hero {
@@ -685,6 +865,17 @@ input, select, textarea {
     position: static;
   }
   #map, .map-message, .resource-list { min-height: 380px; max-height: none; }
+  .static-map {
+    min-height: 260px;
+    order: 2;
+  }
+  .map-layout aside {
+    order: 1;
+  }
+  .trust-banner {
+    align-items: start;
+    flex-direction: column;
+  }
   .section-heading { align-items: start; flex-direction: column; }
   .amounts { grid-template-columns: repeat(2, 1fr); }
   .impact-grid { grid-template-columns: 1fr; }

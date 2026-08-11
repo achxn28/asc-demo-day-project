@@ -79,9 +79,22 @@
               <p class="eyebrow">Current count</p>
               <h2>Homelessness-related indicators</h2>
             </div>
-            <a href="sources.html">View sources</a>
+            <button class="text-button" type="button" data-source-open data-source-title="LAHSA 2026 Homeless Count" data-source-body="The City of Los Angeles total and unsheltered total are from the 2026 Greater Los Angeles Homeless Count. Bridge LA calculates the unsheltered percentage from those two values.">View source note</button>
           </div>
           <div class="grid three" id="home-stats"></div>
+        </div>
+      </section>
+
+      <section class="section off">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Resource finder preview</p>
+              <h2>Real locations, visible limitations</h2>
+            </div>
+            <a href="resources.html">View all resources</a>
+          </div>
+          <div class="resource-preview" id="resource-preview"></div>
         </div>
       </section>
 
@@ -105,7 +118,7 @@
         <div class="container card orange">
           <h2>Better decisions start with visible data.</h2>
           <div class="actions">
-            <a class="button secondary" href="resources.html">Open resource map</a>
+            <a class="button secondary" href="resources.html">Open resource finder</a>
             <a class="button secondary" href="donate.html">Try prototype donation</a>
           </div>
         </div>
@@ -113,7 +126,7 @@
     </main>
     <script type="module">
       import { mountShell } from './js/components.js';
-      import { getJson, unshelteredPercent } from './js/data.js';
+      import { categoryLabel, getJson, serviceAddress, unshelteredPercent } from './js/data.js';
       mountShell('home');
       const stats = document.querySelector('#home-stats');
       const summary = await getJson('./data/lahsa-2026-summary.json');
@@ -123,6 +136,11 @@
         [`${summary.cityOfLosAngeles.unshelteredPopulation.toLocaleString()}`, 'estimated people experiencing unsheltered homelessness in the City of Los Angeles'],
         [`${pct.toFixed(1)}%`, 'of people experiencing homelessness in the City of Los Angeles were unsheltered']
       ].map(([value, label], index) => `<article class="stat-card ${index === 2 ? 'orange' : ''}"><span class="stat-value">${value}</span><p>${label}</p><span class="source">LAHSA 2026 Homeless Count</span></article>`).join('');
+      const services = await getJson('./data/la-service-locations.geojson');
+      document.querySelector('#resource-preview').innerHTML = services.features.slice(0, 3).map((feature) => {
+        const props = feature.properties;
+        return `<article class="resource-mini"><span class="badge">${categoryLabel(props.category)}</span><h3>${props.name}</h3><p>${serviceAddress(props)}</p><a href="resources.html">Open finder</a></article>`;
+      }).join('');
     </script>
     <script src="script.js"></script>
   </body>

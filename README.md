@@ -10,13 +10,12 @@ resource visibility in Los Angeles.
 - Tailwind CSS through CDN
 - Custom CSS
 - Chart.js through CDN
-- Mapbox GL JS through CDN
 
 ## Pages
 
 - `index.html`: project overview
 - `story.html`: Data page with LAHSA 2026 visualizations
-- `resources.html`: Find Resources tool with filters, map, and actions
+- `resources.html`: Find Resources tool with filters, no-token pin map, and actions
 - `visibility.html`: Dashboard with calculated public-data indicators
 - `sources.html`: Sources, methodology, and audit checks
 - `donate.html`: Donate Demo with a prototype receipt flow

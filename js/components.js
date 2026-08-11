@@ -42,7 +42,22 @@ export function footer() {
   `;
 }
 
+export function sourceDrawer() {
+  return `
+    <div class="source-drawer" id="source-drawer" hidden>
+      <div class="source-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="source-drawer-title">
+        <button class="modal-close" type="button" data-source-close>Close</button>
+        <p class="eyebrow">Source note</p>
+        <h2 id="source-drawer-title">Source</h2>
+        <p id="source-drawer-body"></p>
+        <a href="sources.html">Open sources page</a>
+      </div>
+    </div>
+  `;
+}
+
 export function mountShell(active) {
   document.body.insertAdjacentHTML('afterbegin', header(active));
   document.body.insertAdjacentHTML('beforeend', footer());
+  document.body.insertAdjacentHTML('beforeend', sourceDrawer());
 }

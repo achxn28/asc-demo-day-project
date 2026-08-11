@@ -10,6 +10,7 @@ const impactCopy = document.querySelector('#impact-copy');
 const impactGrid = document.querySelector('#impact-grid');
 const confettiLayer = document.querySelector('#confetti-layer');
 const closeImpact = document.querySelector('#close-impact');
+const startOver = document.querySelector('#start-over');
 
 const scenarioAssumptions = {
   personSupportDollars: 25,
@@ -65,6 +66,14 @@ document.querySelector('#donation-form').addEventListener('submit', (event) => {
 });
 
 closeImpact.addEventListener('click', closeModal);
+startOver.addEventListener('click', () => {
+  closeModal();
+  document.querySelector('#donation-form').reset();
+  selectedAmount = 50;
+  document.querySelectorAll('[data-amount]').forEach((item) => {
+    item.classList.toggle('active', item.dataset.amount === '50');
+  });
+});
 impactModal.addEventListener('click', (event) => {
   if (event.target === impactModal) closeModal();
 });
