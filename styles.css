@@ -440,92 +440,27 @@ input, select, textarea {
   background: var(--off-white);
 }
 
-.static-map {
-  position: relative;
-  overflow: hidden;
-  min-height: 560px;
-  border: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 28% 36%, rgba(244, 101, 36, 0.35), transparent 12%),
-    radial-gradient(circle at 62% 44%, rgba(0, 0, 0, 0.12), transparent 16%),
-    linear-gradient(135deg, #fff7f1 0%, #f8f7f5 52%, #ece7df 100%);
+.leaflet-container {
+  font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
-.static-map::before {
-  content: "";
-  position: absolute;
-  inset: 18% 8% 14% 12%;
-  border: 2px solid rgba(0, 0, 0, 0.24);
-  transform: skew(-14deg) rotate(-6deg);
+.resource-map-marker {
+  display: grid;
+  place-items: center;
 }
 
-.map-label {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  z-index: 2;
-  border: 1px solid var(--line);
-  background: var(--white);
-  padding: 0.4rem 0.55rem;
-  font-weight: 900;
-}
-
-.map-gridline {
-  position: absolute;
-  background: rgba(0, 0, 0, 0.14);
-}
-
-.map-gridline.horizontal {
-  left: 0;
-  right: 0;
-  top: 55%;
-  height: 1px;
-}
-
-.map-gridline.vertical {
-  top: 0;
-  bottom: 0;
-  left: 52%;
-  width: 1px;
-}
-
-.map-pin-layer {
-  position: absolute;
-  inset: 0;
-}
-
-.map-pin {
-  position: absolute;
+.resource-map-marker span {
+  display: block;
   width: 1rem;
   height: 1rem;
-  translate: -50% -50%;
   border: 2px solid var(--black);
-  background: var(--pin-color);
-  cursor: pointer;
+  box-shadow: 0 0 0 2px var(--white);
 }
 
-.map-pin span {
-  position: absolute;
-  left: 1rem;
-  top: -0.35rem;
-  display: none;
-  width: max-content;
-  max-width: 12rem;
-  border: 1px solid var(--line);
-  background: var(--white);
-  padding: 0.25rem 0.35rem;
-  font-size: 0.75rem;
-  font-weight: 900;
-}
-
-.map-pin:hover span,
-.map-pin.active span {
-  display: block;
-}
-
-.map-pin.active {
-  outline: 4px solid rgba(244, 101, 36, 0.35);
-  scale: 1.35;
+.resource-map-marker.active span {
+  width: 1.35rem;
+  height: 1.35rem;
+  box-shadow: 0 0 0 4px rgba(244, 101, 36, 0.35);
 }
 
 .map-message {
@@ -865,10 +800,6 @@ input, select, textarea {
     position: static;
   }
   #map, .map-message, .resource-list { min-height: 380px; max-height: none; }
-  .static-map {
-    min-height: 260px;
-    order: 2;
-  }
   .map-layout aside {
     order: 1;
   }

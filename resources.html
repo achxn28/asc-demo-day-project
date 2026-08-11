@@ -4,8 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Resources | Bridge LA</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css?v=1" />
+    <link rel="stylesheet" href="styles.css?v=4" />
+    <script src="vendor/leaflet/leaflet.js?v=1"></script>
   </head>
   <body>
     <main>
@@ -27,6 +30,7 @@
               <button type="button" data-need="shelter">I need shelter</button>
               <button type="button" data-need="mental health">Mental health</button>
               <button type="button" data-need="healthcare">Healthcare</button>
+              <button type="button" data-need="food">Food</button>
               <button type="button" data-need="all" class="active">Show all</button>
             </div>
           </div>
@@ -37,6 +41,8 @@
                 <option value="shelter">Shelter</option>
                 <option value="healthcare">Healthcare</option>
                 <option value="mental health">Mental health</option>
+                <option value="food">Food</option>
+                <option value="outreach">Outreach</option>
               </select></label>
             <div class="toolbar-status">
               <strong id="resource-count">0 resources</strong>
@@ -45,25 +51,20 @@
           </div>
           <div class="notice">Current availability: contact the provider or 211 LA. The map does not display fake real-time bed counts.</div>
           <div class="map-layout">
-            <div class="static-map" id="map" aria-label="Approximate Los Angeles resource map">
-              <div class="map-label">Los Angeles area</div>
-              <div class="map-gridline horizontal"></div>
-              <div class="map-gridline vertical"></div>
-              <div class="map-pin-layer" id="map-pin-layer"></div>
-            </div>
+            <div id="map" aria-label="Accurate Los Angeles resource map"></div>
             <aside>
               <div class="list-heading">
                 <h2>Results</h2>
                 <p>Click a result to highlight its pin.</p>
               </div>
               <div class="resource-list" id="resource-list"></div>
-              <span class="source">Sources: County of Los Angeles Enterprise GIS / 211 LA. Pin positions are approximate and based on source-provided coordinates.</span>
+              <span class="source">Sources: County of Los Angeles Enterprise GIS / 211 LA. Map tiles: OpenStreetMap contributors.</span>
             </aside>
           </div>
         </div>
       </section>
     </main>
-    <script type="module" src="js/resources.js"></script>
-    <script src="script.js"></script>
+    <script src="js/resources.js?v=5"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>

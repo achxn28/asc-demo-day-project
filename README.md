@@ -10,6 +10,7 @@ resource visibility in Los Angeles.
 - Tailwind CSS through CDN
 - Custom CSS
 - Chart.js through CDN
+- Leaflet with OpenStreetMap tiles
 
 ## Pages
 

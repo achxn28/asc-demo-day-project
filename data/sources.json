@@ -33,7 +33,7 @@
     "year": "Public feature service",
     "retrieved": "2026-08-11",
     "source": "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
-    "usedFor": "Mapped service locations, addresses, phone numbers, categories, descriptions, and source labels."
+    "usedFor": "Mapped 182 service locations, addresses, phone numbers, categories, descriptions, and source labels."
   },
   {
     "id": "census-acs-2020-2024-s1701",
