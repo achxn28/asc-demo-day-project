@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visibility Dashboard | Bridge LA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="container page-hero">
+        <p class="eyebrow">Visibility dashboard</p>
+        <h1>Numbers calculated from traceable datasets.</h1>
+        <p class="intro">This dashboard uses LAHSA 2026 totals and real mapped service records. It avoids current-availability or occupancy claims that are not publicly verifiable.</p>
+      </section>
+      <section class="section">
+        <div class="container grid four" id="visibility-stats"></div>
+      </section>
+      <section class="section off">
+        <div class="container grid two">
+          <article>
+            <h2>Service categories represented</h2>
+            <p class="intro">Counts are calculated from the local copy of official LA County/211 service records included in this project.</p>
+            <span class="source">Source: County of Los Angeles Homeless Shelters and Services feature service</span>
+          </article>
+          <div class="chart-wrap"><canvas id="categoryChart"></canvas></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="method">
+            <h2>Bridge LA resource-access indicator</h2>
+            <p class="intro">For this static prototype, Bridge LA labels areas with fewer mapped resources near high-need homelessness/poverty geographies as a derived indicator only. It is not an official government designation, and poverty tract values are not substituted if the Census API cannot load.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="js/visibility.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "id": "lahsa-hc-2026-city-la",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "2026 Greater Los Angeles Homeless Count - City of Los Angeles Data Summary",
+    "year": 2026,
+    "retrieved": "2026-08-11",
+    "source": "https://www.lahsa.org/news?article=1078-2026-greater-los-angeles-homeless-count-data"
+  },
+  "cityOfLosAngeles": {
+    "totalHomelessPopulation": 45194,
+    "unshelteredPopulation": 29115
+  }
+}

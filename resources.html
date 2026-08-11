@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resources | Bridge LA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="container page-hero">
+        <p class="eyebrow">Resource map</p>
+        <h1>Verified service locations, clear limits.</h1>
+        <p class="intro">These markers come from the Los Angeles County Homeless Shelters and Services feature service. Current bed availability is not shown because Bridge LA did not find a public real-time availability source.</p>
+      </section>
+      <section class="section off">
+        <div class="container">
+          <div class="filters">
+            <input id="resource-search" type="search" placeholder="Search by name, city, or service" />
+            <select id="resource-type">
+              <option value="all">All types</option>
+              <option value="shelter">Shelter</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="mental health">Mental health</option>
+            </select>
+            <select id="resource-layer">
+              <option value="services">Services</option>
+              <option value="access">Access indicator</option>
+            </select>
+          </div>
+          <div class="notice">Current availability: contact the provider or 211 LA. The map does not display fake real-time bed counts.</div>
+          <div class="map-layout">
+            <div id="map"></div>
+            <aside>
+              <div class="resource-list" id="resource-list"></div>
+              <span class="source">Sources: County of Los Angeles Enterprise GIS / 211 LA. Poverty layer is attempted from Census ACS 2020-2024 and fails visibly if unavailable.</span>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="js/resources.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

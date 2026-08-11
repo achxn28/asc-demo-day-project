@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Bridge LA explains homelessness and public resource visibility in Los Angeles using traceable public data." />
+    <title>Bridge LA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Visibility creates action.</p>
+          <h1 id="hero-title">Building a clearer picture of homelessness in Los Angeles.</h1>
+          <p class="intro">Bridge LA combines public homelessness data, verified service locations, and transparent methodology so civic information is easier to understand and act on.</p>
+          <div class="actions">
+            <a class="button primary" href="resources.html">Explore resources</a>
+            <a class="button secondary" href="story.html">See the data</a>
+          </div>
+        </div>
+        <aside class="image-panel" aria-label="Los Angeles civic image">
+          <p>Los Angeles is known worldwide for entertainment and landmarks. Bridge LA looks beneath that surface at public data on housing insecurity.</p>
+        </aside>
+      </section>
+
+      <section class="section off">
+        <div class="container grid two">
+          <article class="card">
+            <p class="eyebrow">LA from the outside</p>
+            <h2>Hollywood, film, theme parks, performing arts.</h2>
+          </article>
+          <article class="card orange">
+            <p class="eyebrow" style="color:#000">LA beneath the surface</p>
+            <h2>45,194 people were estimated to be experiencing homelessness in the City of Los Angeles.</h2>
+            <span class="source">Source: LAHSA 2026 Greater Los Angeles Homeless Count</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Current count</p>
+              <h2>Homelessness-related indicators</h2>
+            </div>
+            <a href="sources.html">View sources</a>
+          </div>
+          <div class="grid three" id="home-stats"></div>
+        </div>
+      </section>
+
+      <section class="section off">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">How Bridge LA helps</p>
+              <h2>Tools for visibility and accountability</h2>
+            </div>
+          </div>
+          <div class="grid three">
+            <a class="card" href="resources.html"><h3>Verified Resource Visibility</h3><p>Search real public service-location records and contact providers for current availability.</p></a>
+            <a class="card" href="visibility.html"><h3>Transparent Indicators</h3><p>See counts calculated from loaded datasets, with clear limits and source labels.</p></a>
+            <a class="card" href="audits.html"><h3>Audit Readiness</h3><p>Inspect what data is complete, what needs verification, and what cannot be claimed.</p></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container card orange">
+          <h2>Better decisions start with visible data.</h2>
+          <div class="actions">
+            <a class="button secondary" href="resources.html">Open resource map</a>
+            <a class="button secondary" href="donate.html">Try prototype donation</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module">
+      import { mountShell } from './js/components.js';
+      import { getJson, unshelteredPercent } from './js/data.js';
+      mountShell('home');
+      const stats = document.querySelector('#home-stats');
+      const summary = await getJson('./data/lahsa-2026-summary.json');
+      const pct = unshelteredPercent(summary);
+      stats.innerHTML = [
+        [`${summary.cityOfLosAngeles.totalHomelessPopulation.toLocaleString()}`, 'estimated people experiencing homelessness in the City of Los Angeles'],
+        [`${summary.cityOfLosAngeles.unshelteredPopulation.toLocaleString()}`, 'estimated people experiencing unsheltered homelessness in the City of Los Angeles'],
+        [`${pct.toFixed(1)}%`, 'of people experiencing homelessness in the City of Los Angeles were unsheltered']
+      ].map(([value, label], index) => `<article class="stat-card ${index === 2 ? 'orange' : ''}"><span class="stat-value">${value}</span><p>${label}</p><span class="source">LAHSA 2026 Homeless Count</span></article>`).join('');
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

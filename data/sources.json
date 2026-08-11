@@ -1,0 +1,47 @@
+[
+  {
+    "id": "lahsa-hc-2026-city-la",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "2026 Greater Los Angeles Homeless Count",
+    "year": "2026",
+    "retrieved": "2026-08-11",
+    "source": "https://www.lahsa.org/news?article=1078-2026-greater-los-angeles-homeless-count-data",
+    "usedFor": "City of Los Angeles homelessness total and unsheltered total."
+  },
+  {
+    "id": "lahsa-hc-2026-subtract",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "HC 2026 Data by Census SubTract",
+    "year": "2026",
+    "retrieved": "2026-08-11",
+    "source": "https://www.lahsa.org/documents?id=10119-hc-26-raw-data-by-census-sub-tract-final",
+    "usedFor": "Identified as the official source for future tract-level homelessness visualization. This prototype does not fabricate tract values."
+  },
+  {
+    "id": "lahsa-hic-2026",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "2026 Housing Inventory Count",
+    "year": "2026",
+    "retrieved": "2026-08-11",
+    "source": "https://www.lahsa.org/documents?id=10148-2026-housing-inventory-count-no-address-2026-07-08",
+    "usedFor": "Explains the distinction between inventory and current availability. No real-time bed availability is shown."
+  },
+  {
+    "id": "la-county-homeless-shelters-services",
+    "publisher": "County of Los Angeles Enterprise GIS / 211 LA",
+    "dataset": "Homeless Shelters and Services",
+    "year": "Public feature service",
+    "retrieved": "2026-08-11",
+    "source": "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
+    "usedFor": "Mapped service locations, addresses, phone numbers, categories, descriptions, and source labels."
+  },
+  {
+    "id": "census-acs-2020-2024-s1701",
+    "publisher": "U.S. Census Bureau",
+    "dataset": "ACS 2020-2024 5-Year Estimates, Subject Table S1701",
+    "year": "2020-2024",
+    "retrieved": "2026-08-11",
+    "source": "https://api.census.gov/data/2024/acs/acs5/subject/variables/S1701_C03_001E.json",
+    "usedFor": "Tract-level poverty-rate layer when a Census API key or public API access is available. The site shows an error rather than fake poverty rates when the API cannot load."
+  }
+]

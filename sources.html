@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sources & Methodology | Bridge LA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container page-hero">
+        <p class="eyebrow">Data sources & methodology</p>
+        <h1>Every major claim needs a source.</h1>
+        <p class="intro">Bridge LA uses official public datasets where factual values appear. If a metric cannot be verified, the interface omits it or labels the limitation.</p>
+      </section>
+      <section class="section off">
+        <div class="container grid two" id="sources-list"></div>
+      </section>
+      <section class="section">
+        <div class="container method">
+          <h2>Resource-access methodology</h2>
+          <p class="intro">Bridge LA’s access indicator is a derived prototype concept: compare mapped service counts against need indicators such as LAHSA homelessness geography and ACS poverty rates. It is not an official LA government designation, and the project must not fill missing tract data with invented values.</p>
+        </div>
+      </section>
+    </main>
+    <script type="module">
+      import { mountShell } from './js/components.js';
+      import { getJson } from './js/data.js';
+      mountShell('sources');
+      const sources = await getJson('./data/sources.json');
+      document.querySelector('#sources-list').innerHTML = sources.map((source) => `
+        <article class="source-card">
+          <p class="eyebrow">${source.publisher}</p>
+          <h3>${source.dataset}</h3>
+          <p><strong>Year:</strong> ${source.year}</p>
+          <p><strong>Retrieved:</strong> ${source.retrieved}</p>
+          <p>${source.usedFor}</p>
+          <a href="${source.source}">Original source</a>
+        </article>
+      `).join('');
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

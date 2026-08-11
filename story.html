@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Story Behind the Numbers | Bridge LA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="container page-hero">
+        <p class="eyebrow">The story</p>
+        <h1>The Story Behind the Numbers</h1>
+        <p class="intro">Los Angeles is often seen through its public image: entertainment, tourism, and cultural production. Bridge LA pairs that story with current public data on homelessness and the limits of what those datasets can prove.</p>
+      </section>
+      <section class="section">
+        <div class="container grid three" id="story-stats"></div>
+      </section>
+      <section class="section off">
+        <div class="container grid two">
+          <article>
+            <h2>Sheltered and unsheltered count</h2>
+            <p class="intro">This chart uses the City of Los Angeles totals from the 2026 Greater Los Angeles Homeless Count and calculates the sheltered estimate from total minus unsheltered.</p>
+            <span class="source">Source: LAHSA 2026 Greater Los Angeles Homeless Count</span>
+          </article>
+          <div class="chart-wrap"><canvas id="shelterChart"></canvas></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container grid two">
+          <div class="chart-wrap"><canvas id="shareChart"></canvas></div>
+          <article>
+            <h2>Why visibility matters</h2>
+            <p class="intro">A large unsheltered share means people and service providers need information that is accurate, current, and explicit about uncertainty. Bridge LA avoids fake availability claims and points users to provider contact information where real-time data is not public.</p>
+            <a href="resources.html">Go to the resource map</a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="js/story.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

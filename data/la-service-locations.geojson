@@ -1,0 +1,143 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "id": "la-county-homeless-shelters-services",
+    "publisher": "County of Los Angeles Enterprise GIS / 211 LA",
+    "dataset": "Homeless Shelters and Services",
+    "retrieved": "2026-08-11",
+    "source": "https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/LMS_Data_Public/MapServer/158",
+    "note": "Records are a compact local copy of public ArcGIS features. Missing source fields are omitted rather than filled."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": 951,
+      "geometry": { "type": "Point", "coordinates": [-118.319256, 34.101863] },
+      "properties": {
+        "name": "Salvation Army - The Way In",
+        "category": "shelter",
+        "address": "5939 Hollywood Blvd.",
+        "city": "Hollywood",
+        "zip": "90028",
+        "phones": "24 Hour Service/Intake and Hotline (323) 469-2946; (800) 843-9294",
+        "hours": "Drop In Center Monday-Friday 6:00pm to 8:00pm. Shelter programs daily, 24 hours.",
+        "description": "Holiday assistance, runaway services, and shelter for homeless youth in the Hollywood area.",
+        "source": "211"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2653,
+      "geometry": { "type": "Point", "coordinates": [-118.243152, 34.045219] },
+      "properties": {
+        "name": "Special Service for Groups - Project 180",
+        "category": "mental health",
+        "address": "420 S. San Pedro",
+        "city": "Los Angeles",
+        "zip": "90013",
+        "phones": "Service/Intake (213) 620-5712",
+        "hours": "Monday-Friday 8:30am to 4:30pm.",
+        "description": "Advocacy, child care, HIV/AIDS services, interpreter services, personal goods, older adult services, substance abuse services, and youth services.",
+        "source": "211"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3097,
+      "geometry": { "type": "Point", "coordinates": [-118.2657894, 34.05753854] },
+      "properties": {
+        "name": "La Posada",
+        "category": "shelter",
+        "address": "375 S. Columbia Ave.",
+        "city": "Los Angeles",
+        "zip": "90017",
+        "url": "www.neweconomicsforwomen.org",
+        "hours": "Window Service Hours",
+        "description": "Transitional shelter for single women with a child or pregnant with their first child.",
+        "source": "Current Services Locator"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3112,
+      "geometry": { "type": "Point", "coordinates": [-118.3237936, 34.05281504] },
+      "properties": {
+        "name": "Center for the Pacific Asian Family Inc.",
+        "category": "mental health",
+        "address": "1102 Crenshaw Blvd.",
+        "city": "Los Angeles",
+        "zip": "90019",
+        "phones": "24 Hour Hotline (323) 966-4590; (323) 653-4042; Administrative (323) 653-4045",
+        "url": "www.nurturingchange.org",
+        "description": "Child abuse services, domestic violence services, shelter, sexual assault services, volunteer opportunities, and welfare-to-work support services.",
+        "source": "211"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3319,
+      "geometry": { "type": "Point", "coordinates": [-118.2441901, 34.04338459] },
+      "properties": {
+        "name": "Lamp Community",
+        "category": "shelter",
+        "address": "526 S San Pedro St",
+        "city": "Los Angeles",
+        "zip": "90013",
+        "phones": "Service/Intake (213) 488-0031; Administration (213) 488-9559",
+        "url": "www.lampcommunity.org",
+        "description": "Homeless support services and shelter for adults with chronic mental illness in Skid Row and downtown Los Angeles.",
+        "source": "211"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4703,
+      "geometry": { "type": "Point", "coordinates": [-118.246748, 34.042306] },
+      "properties": {
+        "name": "Lamp Community - Frank Rice Access Center",
+        "category": "mental health",
+        "address": "627 San Julian St.",
+        "city": "Los Angeles",
+        "zip": "90014",
+        "phones": "Service/Intake (213) 488-0031; Administrative (213) 488-9559",
+        "hours": "Monday-Friday 8:00am to 4:00pm.",
+        "url": "www.lampcommunity.org",
+        "description": "Homeless support services and shelter for adults with chronic mental illness in Skid Row and downtown Los Angeles.",
+        "source": "211"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3075,
+      "geometry": { "type": "Point", "coordinates": [-118.321473, 34.101823] },
+      "properties": {
+        "name": "Children's Hospital Los Angeles - High Risk Youth Program - Saban Free Clinic",
+        "category": "healthcare",
+        "address": "6043 Hollywood Blvd.",
+        "city": "Los Angeles",
+        "zip": "90028",
+        "phones": "Appointments (323) 653-1990; Saban Free Clinic Administrative (323) 462-8632",
+        "hours": "Tuesday 1:00pm to 5:00pm and Thursday 2:00pm to 5:00pm.",
+        "url": "www.childrenshospitalla.org/site/c.ipINKTOAJsG/b.4452451/",
+        "description": "Health services and homeless support services for youth age 12 to 24 in the Hollywood area.",
+        "source": "211"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2754,
+      "geometry": { "type": "Point", "coordinates": [-118.437066, 34.149138] },
+      "properties": {
+        "name": "Jewish Family Service of Los Angeles - Family Violence Project",
+        "category": "shelter",
+        "address": "13949 Ventura Blvd.",
+        "city": "Sherman Oaks",
+        "zip": "91423",
+        "phones": "Administrative (818) 789-1293; Hotline (818) 505-0900; Hotline (310) 858-9344",
+        "url": "www.jfsla.org",
+        "description": "Domestic violence services, shelter, and welfare-to-work support services for victims of domestic violence.",
+        "source": "211"
+      }
+    }
+  ]
+}
