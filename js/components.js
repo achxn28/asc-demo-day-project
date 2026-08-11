@@ -4,7 +4,6 @@ export function header(active) {
     ['story.html', 'The Story', 'story'],
     ['resources.html', 'Resources', 'resources'],
     ['visibility.html', 'Visibility', 'visibility'],
-    ['audits.html', 'Audits', 'audits'],
     ['sources.html', 'Methodology', 'sources']
   ];
 
@@ -35,7 +34,7 @@ export function footer() {
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="resources.html">Resources</a>
           <a href="visibility.html">Visibility</a>
-          <a href="sources.html">Sources</a>
+          <a href="sources.html">Methodology</a>
           <a href="donate.html">Donate</a>
         </nav>
       </div>

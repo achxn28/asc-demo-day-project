@@ -18,8 +18,7 @@ resource visibility in Los Angeles.
 - `story.html`: LAHSA 2026 homelessness data visualizations
 - `resources.html`: resource map and filterable service list
 - `visibility.html`: calculated visibility dashboard
-- `audits.html`: transparency/audit concepts
-- `sources.html`: source manifest and methodology
+- `sources.html`: source manifest, methodology, and audit checks
 - `donate.html`: clearly labeled prototype donation flow
 
 ## Data
