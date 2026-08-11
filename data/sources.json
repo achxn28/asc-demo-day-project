@@ -43,5 +43,14 @@
     "retrieved": "2026-08-11",
     "source": "https://api.census.gov/data/2024/acs/acs5/subject/variables/S1701_C03_001E.json",
     "usedFor": "Tract-level poverty-rate layer when a Census API key or public API access is available. The site shows an error rather than fake poverty rates when the API cannot load."
+  },
+  {
+    "id": "la-mission-danielle-story",
+    "publisher": "Los Angeles Mission",
+    "dataset": "Danielle: Seeking Hope After Tragedy",
+    "year": "Public story page",
+    "retrieved": "2026-08-11",
+    "source": "https://losangelesmission.org/story/danielle/",
+    "usedFor": "Paraphrased human story on the home page to connect public data with lived experience."
   }
 ]

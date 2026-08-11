@@ -219,6 +219,27 @@ p { margin: 0; }
   color: var(--black);
 }
 
+.human-story {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(1rem, 4vw, 2rem);
+  align-items: start;
+}
+
+.story-card {
+  border: 2px solid var(--black);
+  background: var(--white);
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.story-card p + p {
+  margin-top: 1rem;
+}
+
+.story-card .button {
+  margin-top: 1.25rem;
+}
+
 .stat-value {
   display: block;
   color: var(--black);
@@ -476,7 +497,7 @@ input, select, textarea {
   }
   .site-nav.open { display: flex; }
   .site-nav .donate-link { margin-left: 0; }
-  .two, .three, .four, .map-layout, .donation-box, .footer-inner {
+  .two, .three, .four, .map-layout, .donation-box, .footer-inner, .human-story {
     grid-template-columns: 1fr;
   }
   .home-hero {
