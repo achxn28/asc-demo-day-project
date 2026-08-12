@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stories | Bridge LA</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container page-hero">
+        <p class="eyebrow">Stories</p>
+        <h1 class="page-title">The people behind the map and charts.</h1>
+        <p class="intro">Bridge LA uses public data, but the project should never feel like it is only about numbers. These public stories from Los Angeles organizations show grief, family, recovery, housing, and the long work of rebuilding.</p>
+      </section>
+      <section class="section off">
+        <div class="container human-story">
+          <div>
+            <p class="eyebrow">Featured story</p>
+            <h2>Danielle’s story gives the site its center.</h2>
+          </div>
+          <article class="story-card">
+            <p>Los Angeles Mission shares that Danielle experienced major family loss, homelessness, incarceration, and recovery before rebuilding toward sobriety, work, and family connection.</p>
+            <p>Her story is why Bridge LA keeps asking the same question on every page: does this data help someone understand the crisis and take a real next step?</p>
+            <a class="button secondary" href="https://losangelesmission.org/story/danielle/">Read Danielle’s story</a>
+            <span class="source">Source: Los Angeles Mission, “Danielle: Seeking Hope After Tragedy.”</span>
+          </article>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">More local stories</p>
+              <h2>Read beyond one example</h2>
+            </div>
+          </div>
+          <div class="grid three">
+            <a class="story-link-card" href="https://losangelesmission.org/stories-of-change/"><span class="badge">Collection</span><h3>Los Angeles Mission stories of change</h3><p>Stories from people who found support through meals, shelter, recovery, and case management.</p></a>
+            <a class="story-link-card" href="https://urm.org/homelessness-in-la/"><span class="badge">Collection</span><h3>Union Rescue Mission stories from Skid Row</h3><p>Video stories about people navigating homelessness, trauma, substance use, and recovery.</p></a>
+            <a class="story-link-card" href="https://www.midnightmission.org/success-stories/"><span class="badge">Collection</span><h3>The Midnight Mission success stories</h3><p>Stories about housing, recovery, education, work, and rebuilding after homelessness.</p></a>
+            <a class="story-link-card" href="https://homeless.lacounty.gov/success-stories/"><span class="badge">Collection</span><h3>LA County success stories</h3><p>County stories about supportive housing, case management, medical care, and stability.</p></a>
+            <a class="story-link-card" href="https://homeless.lacounty.gov/success-stories-archive/faces-on-the-journey-home-danielle-2/"><span class="badge">Family</span><h3>Danielle Young and her family</h3><p>A Faces on the Journey Home story about moving from homelessness into housing.</p></a>
+            <a class="story-link-card" href="https://urm.org/"><span class="badge">Videos</span><h3>More Union Rescue Mission stories</h3><p>URM regularly features stories from people connected to its Skid Row services.</p></a>
+          </div>
+        </div>
+      </section>
+      <section class="section off">
+        <div class="container method">
+          <h2>How these stories should be used</h2>
+          <p class="intro">Stories build empathy, but they should not replace data or be used as proof that one solution works for everyone. Bridge LA uses them to keep the interface human while still labeling sources, limits, and uncertainty.</p>
+          <div class="actions">
+            <a class="button secondary" href="story.html">Open the Data page</a>
+            <a class="button secondary" href="resources.html">Find resources</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module">
+      import { mountShell } from './js/components.js';
+      mountShell('stories');
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

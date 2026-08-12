@@ -227,7 +227,7 @@ p { margin: 0; }
 .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-.card, .stat-card, .notice, .source-card {
+.card, .stat-card, .notice, .source-card, .story-link-card {
   border: 1px solid var(--line);
   background: var(--white);
   padding: 1.1rem;
@@ -381,6 +381,34 @@ p { margin: 0; }
   margin-bottom: 1rem;
 }
 
+.help-tonight {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) repeat(3, auto) auto;
+  align-items: center;
+  gap: 0.65rem;
+  border: 2px solid var(--black);
+  background: var(--white);
+  padding: 0.8rem;
+}
+
+.help-tonight strong {
+  color: var(--black);
+  font-size: 1.05rem;
+}
+
+.help-tonight span {
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.help-tonight button {
+  border: 2px solid var(--black);
+  background: var(--orange);
+  padding: 0.55rem 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
 .need-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -438,6 +466,31 @@ input, select, textarea {
   min-height: 560px;
   border: 2px solid var(--black);
   background: var(--off-white);
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.map-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 0.35rem 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.map-legend i {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid var(--black);
+  background: var(--legend-color);
 }
 
 .leaflet-container {
@@ -541,6 +594,8 @@ input, select, textarea {
 
 .badge {
   display: inline-flex;
+  justify-self: start;
+  align-self: start;
   border: 2px solid var(--black);
   padding: 0.2rem 0.45rem;
   background: var(--off-white);
@@ -565,6 +620,21 @@ input, select, textarea {
 
 .accordion-body { display: none; margin-top: 0.8rem; }
 .accordion[open] .accordion-body { display: block; }
+
+.story-link-card {
+  display: grid;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.story-link-card:hover h3,
+.story-link-card:focus-visible h3 {
+  text-decoration: underline;
+}
+
+.story-link-card p {
+  color: var(--text);
+}
 
 .donation-box {
   display: grid;
@@ -784,7 +854,7 @@ input, select, textarea {
   .two, .three, .four, .map-layout, .donation-box, .footer-inner, .human-story {
     grid-template-columns: 1fr;
   }
-  .path-grid, .resource-toolbar, .form-grid, .resource-preview {
+  .path-grid, .resource-toolbar, .form-grid, .resource-preview, .help-tonight {
     grid-template-columns: 1fr;
   }
   .home-hero {

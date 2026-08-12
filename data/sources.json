@@ -51,6 +51,78 @@
     "year": "Public story page",
     "retrieved": "2026-08-11",
     "source": "https://losangelesmission.org/story/danielle/",
-    "usedFor": "Paraphrased human story on the home page to connect public data with lived experience."
+    "usedFor": "Paraphrased human story across the site to connect public data with lived experience."
+  },
+  {
+    "id": "lahsa-real-time-bed-announcement",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "Real-Time Tracking of Interim Housing Bed Availability announcement",
+    "year": "2024",
+    "retrieved": "2026-08-12",
+    "source": "https://www.lahsa.org/news?article=1004-lahsa-launches-system-for-real-time-tracking-of-ih-bed-availability",
+    "usedFor": "Identifies LAHSA's provider-network real-time bed availability work. Bridge LA does not embed it because no public live feed was verified."
+  },
+  {
+    "id": "lahsa-data-refresh",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "Data Refresh dashboards",
+    "year": "Current public dashboard",
+    "retrieved": "2026-08-12",
+    "source": "https://www.lahsa.org/data-refresh",
+    "usedFor": "Shows that LAHSA public dashboards are available, with the interim housing dashboard updated monthly rather than as a live bed feed."
+  },
+  {
+    "id": "la-controller-shelter-bed-demo",
+    "publisher": "Los Angeles Controller",
+    "dataset": "Shelter Bed Availability Map DEMO",
+    "year": "Public demo",
+    "retrieved": "2026-08-12",
+    "source": "https://shelterbeds.lacontroller.app/",
+    "usedFor": "Linked as a public demo related to shelter capacity and occupancy, not treated as Bridge LA live availability data."
+  },
+  {
+    "id": "la-211-winter-shelter",
+    "publisher": "211 LA",
+    "dataset": "Winter Shelter Bed Availability",
+    "year": "2025-2026 season",
+    "retrieved": "2026-08-12",
+    "source": "https://211la.org/aws",
+    "usedFor": "Explains seasonal winter shelter availability guidance and the role of calling 211."
+  },
+  {
+    "id": "la-mission-stories-change",
+    "publisher": "Los Angeles Mission",
+    "dataset": "Stories of Change",
+    "year": "Public story collection",
+    "retrieved": "2026-08-12",
+    "source": "https://losangelesmission.org/stories-of-change/",
+    "usedFor": "Linked from the Stories page as a collection of public local stories."
+  },
+  {
+    "id": "urm-stories-skid-row",
+    "publisher": "Union Rescue Mission",
+    "dataset": "Stories from Skid Row",
+    "year": "Public story collection",
+    "retrieved": "2026-08-12",
+    "source": "https://urm.org/homelessness-in-la/",
+    "usedFor": "Linked from the Stories page as a collection of public local stories."
+  },
+  {
+    "id": "midnight-mission-success-stories",
+    "publisher": "The Midnight Mission",
+    "dataset": "Success Stories",
+    "year": "Public story collection",
+    "retrieved": "2026-08-12",
+    "source": "https://www.midnightmission.org/success-stories/",
+    "usedFor": "Linked from the Stories page as a collection of public local stories."
+  },
+  {
+    "id": "la-county-success-stories",
+    "publisher": "LA County Homeless Services and Housing",
+    "dataset": "Success Stories",
+    "year": "Public story collection",
+    "retrieved": "2026-08-12",
+    "source": "https://homeless.lacounty.gov/success-stories/",
+    "usedFor": "Linked from the Stories page as a collection of public local stories."
   }
 ]

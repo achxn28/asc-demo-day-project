@@ -2,6 +2,7 @@ export function header(active) {
   const links = [
     ['index.html', 'Home', 'home'],
     ['story.html', 'Data', 'story'],
+    ['stories.html', 'Stories', 'stories'],
     ['resources.html', 'Find Resources', 'resources'],
     ['visibility.html', 'Dashboard', 'visibility'],
     ['sources.html', 'Sources', 'sources']
@@ -33,6 +34,7 @@ export function footer() {
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="resources.html">Find Resources</a>
+          <a href="stories.html">Stories</a>
           <a href="visibility.html">Dashboard</a>
           <a href="sources.html">Sources</a>
           <a href="donate.html">Donate Demo</a>

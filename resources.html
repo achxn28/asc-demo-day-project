@@ -7,7 +7,7 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="vendor/leaflet/leaflet.css?v=1" />
-    <link rel="stylesheet" href="styles.css?v=5" />
+    <link rel="stylesheet" href="styles.css?v=6" />
     <script src="vendor/leaflet/leaflet.js?v=1"></script>
   </head>
   <body>
@@ -15,7 +15,7 @@
       <section class="container page-hero">
         <p class="eyebrow">Find resources</p>
         <h1 class="page-title">Search real LA service locations.</h1>
-        <p class="intro">Filter public shelter, healthcare, and mental-health records. For current availability, call the provider or 211 LA because static public data cannot confirm open beds or appointments.</p>
+        <p class="intro">Filter public shelter, healthcare, and mental-health records. Danielle’s story is a reminder that the map should move people toward real calls, directions, and care, not just dots on a screen.</p>
       </section>
       <section class="section off">
         <div class="container">
@@ -26,6 +26,13 @@
           </div>
           <div class="help-flow" aria-label="Find Help Now">
             <p class="eyebrow">Find Help Now</p>
+            <div class="help-tonight">
+              <strong>I need help tonight</strong>
+              <span>1. Choose shelter or service type</span>
+              <span>2. Filter the map</span>
+              <span>3. Use Call or Directions</span>
+              <button type="button" data-need-tonight>Start with shelter</button>
+            </div>
             <div class="need-tabs" id="need-tabs">
               <button type="button" data-need="shelter">I need shelter</button>
               <button type="button" data-need="mental health">Mental health</button>
@@ -51,11 +58,20 @@
           </div>
           <div class="notice">Current availability: contact the provider or 211 LA. The map does not display fake real-time bed counts.</div>
           <div class="map-layout">
-            <div id="map" aria-label="Accurate Los Angeles resource map"></div>
+            <div>
+              <div class="map-legend" aria-label="Map legend">
+                <span><i style="--legend-color:#f46524"></i>Shelter</span>
+                <span><i style="--legend-color:#777777"></i>Mental health</span>
+                <span><i style="--legend-color:#000000"></i>Healthcare</span>
+                <span><i style="--legend-color:#b84a16"></i>Food/support</span>
+                <span><i style="--legend-color:#a0a0a0"></i>Other</span>
+              </div>
+              <div id="map" aria-label="Accurate Los Angeles resource map"></div>
+            </div>
             <aside>
               <div class="list-heading">
                 <h2>Results</h2>
-                <p>Click a result to highlight its pin.</p>
+                <p>For help tonight: click a result, then use Call or Directions.</p>
               </div>
               <div class="resource-list" id="resource-list"></div>
               <span class="source">Sources: County of Los Angeles Enterprise GIS / 211 LA. Map tiles: OpenStreetMap contributors.</span>
@@ -64,7 +80,7 @@
         </div>
       </section>
     </main>
-    <script src="js/resources.js?v=5"></script>
+    <script src="js/resources.js?v=6"></script>
     <script src="script.js?v=3"></script>
   </body>
 </html>

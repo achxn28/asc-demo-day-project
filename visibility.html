@@ -14,7 +14,7 @@
       <section class="container page-hero">
         <p class="eyebrow">Public indicators</p>
         <h1 class="page-title">What the public data can show right now.</h1>
-        <p class="intro">This page summarizes LAHSA 2026 totals and mapped service records. It is not a live operations dashboard for shelter capacity, open appointments, or wait times.</p>
+        <p class="intro">This page summarizes LAHSA 2026 totals and mapped service records. It also links to the closest real-time capacity work I could verify, while making clear Bridge LA does not have a public live bed feed.</p>
       </section>
       <section class="section">
         <div class="container grid four" id="visibility-stats"></div>
@@ -39,9 +39,26 @@
       <section class="section">
         <div class="container">
           <div class="method">
+            <h2>Real-time capacity tracking reality check</h2>
+            <p class="intro">LAHSA has announced provider-network access to real-time interim-housing bed availability, but Bridge LA did not find a public live API that can be embedded safely. LAHSA’s public dashboard refreshes monthly, 211’s Winter Shelter page gives seasonal availability instructions, and the LA Controller has a public demo map for bed availability.</p>
+            <div class="actions">
+              <a class="button secondary" href="https://www.lahsa.org/news?article=1004-lahsa-launches-system-for-real-time-tracking-of-ih-bed-availability">LAHSA real-time announcement</a>
+              <a class="button secondary" href="https://www.lahsa.org/data-refresh">LAHSA Data Refresh</a>
+              <a class="button secondary" href="https://shelterbeds.lacontroller.app/">Controller demo map</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container grid two">
+          <article>
             <h2>Bridge LA resource-access indicator</h2>
             <p class="intro">For this static prototype, Bridge LA labels areas with fewer mapped resources near high-need homelessness/poverty geographies as a derived indicator only. It is not an official government designation, and poverty tract values are not substituted if the Census API cannot load.</p>
-          </div>
+          </article>
+          <article class="story-card">
+            <p>Danielle’s story belongs on this page too: a dashboard that cannot help someone take the next step is just a wall of numbers. That is why Bridge LA separates public indicators from live availability and points people back to call/directions actions.</p>
+            <a href="stories.html">Read more stories</a>
+          </article>
         </div>
       </section>
       <section class="section off">

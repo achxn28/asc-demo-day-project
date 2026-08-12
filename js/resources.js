@@ -5,6 +5,7 @@ const search = document.querySelector('#resource-search');
 const type = document.querySelector('#resource-type');
 const count = document.querySelector('#resource-count');
 const needTabs = document.querySelector('#need-tabs');
+const helpTonight = document.querySelector('[data-need-tonight]');
 count.textContent = 'Loading resources';
 list.innerHTML = '<div class="empty-state"><h3>Loading official records</h3><p>Bridge LA is loading the local copy of LA County / 211 service data.</p></div>';
 
@@ -210,6 +211,16 @@ async function init() {
     needTabs.querySelectorAll('button').forEach((item) => item.classList.toggle('active', item === button));
     type.value = activeNeed === 'all' ? 'all' : activeNeed;
     update();
+  });
+  helpTonight.addEventListener('click', () => {
+    activeNeed = 'shelter';
+    type.value = 'shelter';
+    search.value = '';
+    needTabs.querySelectorAll('button').forEach((item) => {
+      item.classList.toggle('active', item.dataset.need === 'shelter');
+    });
+    update();
+    document.querySelector('.map-layout')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   update();

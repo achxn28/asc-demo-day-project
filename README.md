@@ -16,6 +16,7 @@ resource visibility in Los Angeles.
 
 - `index.html`: project overview
 - `story.html`: Data page with LAHSA 2026 visualizations
+- `stories.html`: Public story collection page centered on lived experience
 - `resources.html`: Find Resources tool with filters, no-token pin map, and actions
 - `visibility.html`: Dashboard with calculated public-data indicators
 - `sources.html`: Sources, methodology, and audit checks
