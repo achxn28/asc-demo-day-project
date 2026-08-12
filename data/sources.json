@@ -27,6 +27,33 @@
     "usedFor": "Explains the distinction between inventory and current availability. No real-time bed availability is shown."
   },
   {
+    "id": "lahsa-hc-2023-city-la",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "2023 Greater Los Angeles Homeless Count",
+    "year": "2023",
+    "retrieved": "2026-08-12",
+    "source": "https://www.lahsa.org/news?article=927-lahsa-releases-results-of-2023-greater-los-angeles-homeless-count",
+    "usedFor": "City of Los Angeles total homelessness value in the four-year trend chart."
+  },
+  {
+    "id": "lahsa-hc-2024-city-la",
+    "publisher": "Los Angeles County Homeless Initiative / LAHSA",
+    "dataset": "2024 Homeless Count Forward Momentum summary",
+    "year": "2024",
+    "retrieved": "2026-08-12",
+    "source": "https://homeless.lacounty.gov/news/forward-momentum-with-2024-homeless-count/",
+    "usedFor": "City of Los Angeles total homelessness value in the four-year trend chart."
+  },
+  {
+    "id": "lahsa-hc-2025-city-la",
+    "publisher": "Los Angeles Homeless Services Authority",
+    "dataset": "Finalized 2025 Homeless Count Results After HUD Review",
+    "year": "2025",
+    "retrieved": "2026-08-12",
+    "source": "https://www.lahsa.org/news?article=1051-lahsa-releases-finalized-2025-homeless-count-results-after-hud-review",
+    "usedFor": "City of Los Angeles total, sheltered, and calculated unsheltered values in the trend and stacked comparison charts."
+  },
+  {
     "id": "la-county-homeless-shelters-services",
     "publisher": "County of Los Angeles Enterprise GIS / 211 LA",
     "dataset": "Homeless Shelters and Services",
@@ -43,6 +70,24 @@
     "retrieved": "2026-08-11",
     "source": "https://api.census.gov/data/2024/acs/acs5/subject/variables/S1701_C03_001E.json",
     "usedFor": "Tract-level poverty-rate layer when a Census API key or public API access is available. The site shows an error rather than fake poverty rates when the API cannot load."
+  },
+  {
+    "id": "census-reporter-la-profile",
+    "publisher": "Census Reporter / U.S. Census Bureau ACS",
+    "dataset": "Los Angeles city profile",
+    "year": "2024 ACS 5-year profile",
+    "retrieved": "2026-08-12",
+    "source": "https://censusreporter.org/profiles/16000US0644000-los-angeles-ca/",
+    "usedFor": "Poverty-rate context in the housing pressure chart."
+  },
+  {
+    "id": "lahd-housing-pressure",
+    "publisher": "Los Angeles Housing Department",
+    "dataset": "Public Policy & Research housing context",
+    "year": "Public page",
+    "retrieved": "2026-08-12",
+    "source": "https://housing.lacity.gov/strategic-engagement/program-development",
+    "usedFor": "Renter share, rent burdened renter households, and severely rent burdened renter households in the housing pressure chart."
   },
   {
     "id": "la-mission-danielle-story",

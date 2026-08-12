@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "retrieved": "2026-08-12",
+    "note": "Local display dataset assembled from public sources already listed in data/sources.json. Values are rounded for student-project chart readability."
+  },
+  "cityHomelessTrend": [
+    { "year": 2023, "total": 46260 },
+    { "year": 2024, "total": 45252 },
+    { "year": 2025, "total": 43695 },
+    { "year": 2026, "total": 45194 }
+  ],
+  "shelteredComparison": [
+    { "year": 2025, "sheltered": 16723, "unsheltered": 26972 },
+    { "year": 2026, "sheltered": 16079, "unsheltered": 29115 }
+  ],
+  "housingPressure": [
+    { "label": "Poverty rate", "value": 16, "unit": "% of residents", "source": "Census Reporter / ACS 2024 5-year profile" },
+    { "label": "Renter households", "value": 64, "unit": "% of households", "source": "Los Angeles Housing Department" },
+    { "label": "Rent burdened", "value": 26, "unit": "% of renter households", "source": "Los Angeles Housing Department" },
+    { "label": "Severely rent burdened", "value": 30, "unit": "% of renter households", "source": "Los Angeles Housing Department" }
+  ],
+  "dashboardCadence": [
+    { "label": "Homeless Count", "days": 365 },
+    { "label": "System KPI", "days": 90 },
+    { "label": "Interim Housing", "days": 30 },
+    { "label": "Pathway Home delay", "days": 4 }
+  ],
+  "interpretationRisks": [
+    { "label": "Point-in-time count", "risk": 75, "clarity": 70 },
+    { "label": "Public service records", "risk": 58, "clarity": 82 },
+    { "label": "Capacity dashboards", "risk": 68, "clarity": 55 },
+    { "label": "Personal stories", "risk": 45, "clarity": 92 }
+  ]
+}
