@@ -14,7 +14,7 @@ export function header(active) {
 
   return `
     <header class="site-header">
-      <a class="brand" href="index.html"><span class="brand-mark"></span>Bridge LA</a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="logo-mark.svg" alt="" aria-hidden="true" /><span>Bridge LA</span></a>
       <button class="menu-button" type="button" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>Menu</button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         ${navLinks}
