@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-labelledby="title desc">
-  <title id="title">Bridge LA logo mark</title>
-  <desc id="desc">A small simplified bridge pictogram adapted from a CC0 online bridge icon.</desc>
-  <path d="M11 49h50" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="square"/>
-  <path d="M16 49c6-17 13-25 20-25s14 8 20 25" fill="none" stroke="#f46524" stroke-width="7" stroke-linecap="square"/>
-  <path d="M24 49V38M36 49V26M48 49V38" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="square"/>
-</svg>
