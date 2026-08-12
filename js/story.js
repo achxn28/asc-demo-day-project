@@ -25,7 +25,7 @@ document.querySelector('#story-stats').innerHTML = [
   </article>
 `).join('');
 
-Chart.defaults.font.family = 'Source Sans 3, Arial, sans-serif';
+Chart.defaults.font.family = 'Libre Franklin, Arial, sans-serif';
 Chart.defaults.color = '#333333';
 Chart.defaults.borderColor = 'rgba(0, 0, 0, 0.14)';
 

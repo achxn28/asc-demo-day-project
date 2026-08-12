@@ -23,7 +23,7 @@ const topCities = Object.entries(cityCounts)
   .sort((a, b) => b[1] - a[1])
   .slice(0, 8);
 
-Chart.defaults.font.family = 'Source Sans 3, Arial, sans-serif';
+Chart.defaults.font.family = 'Libre Franklin, Arial, sans-serif';
 Chart.defaults.color = '#333333';
 Chart.defaults.borderColor = 'rgba(0, 0, 0, 0.14)';
 

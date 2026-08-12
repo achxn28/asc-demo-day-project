@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Source+Sans+3:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap");
 
 :root {
   --orange: #f46524;
@@ -11,8 +11,8 @@
   --max: 1120px;
   --line: #191919;
   --shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-  --font-body: "Source Sans 3", Arial, Helvetica, sans-serif;
-  --font-display: "Archivo", Arial, Helvetica, sans-serif;
+  --font-body: "Libre Franklin", Arial, Helvetica, sans-serif;
+  --font-display: "Oswald", "Arial Narrow", Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -46,10 +46,11 @@ a { color: inherit; }
   align-items: center;
   gap: 0.55rem;
   font-weight: 900;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   text-decoration: none;
   letter-spacing: 0;
   font-family: var(--font-display);
+  text-transform: uppercase;
 }
 
 .brand-logo {
@@ -69,8 +70,9 @@ a { color: inherit; }
   border: 2px solid transparent;
   text-decoration: none;
   font-weight: 800;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   font-family: var(--font-display);
+  text-transform: uppercase;
 }
 
 .site-nav a[aria-current="page"] {
@@ -91,6 +93,7 @@ a { color: inherit; }
   padding: 0.55rem 0.75rem;
   font-weight: 900;
   font-family: var(--font-display);
+  text-transform: uppercase;
 }
 
 .container {
