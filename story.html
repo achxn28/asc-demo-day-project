@@ -17,7 +17,7 @@
         <p class="intro">Los Angeles is often seen through its public image: entertainment, tourism, and cultural production. Bridge LA pairs that story with current public data and Danielle’s story, so the numbers stay connected to actual lives.</p>
       </section>
       <section class="section">
-        <div class="container grid three" id="story-stats"></div>
+        <div class="container grid four" id="story-stats"></div>
       </section>
       <section class="section off">
         <div class="container grid two">
@@ -63,6 +63,62 @@
             <article class="stat-card"><span class="stat-value">16%</span><p>of Los Angeles residents were below the poverty line</p><span class="source">ACS 2024 5-year profile</span></article>
             <article class="stat-card orange"><span class="stat-value">64%</span><p>of city households are renters</p><span class="source">Los Angeles Housing Department</span></article>
             <article class="stat-card"><span class="stat-value">56%</span><p>of renter households are rent burdened or severely rent burdened</p><span class="source">Los Angeles Housing Department</span></article>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Resource visibility</p>
+              <h2>What the mapped records show</h2>
+            </div>
+          </div>
+          <div class="trust-banner">
+            <strong>Availability note:</strong>
+            <span>Provider records show where services exist. For open beds, appointments, or wait times, call the provider or 211 LA.</span>
+            <button type="button" data-source-open data-source-title="Public resource data limits" data-source-body="Bridge LA uses LAHSA totals and public LA County/211 resource records. It does not display live beds, open appointments, or wait times because those values are not verified in the public datasets used here.">Source note</button>
+          </div>
+        </div>
+      </section>
+      <section class="section off">
+        <div class="container grid two">
+          <article>
+            <h2>Service categories represented</h2>
+            <p class="intro">Counts are calculated from the local copy of official LA County/211 service records included in this project.</p>
+            <span class="source">Source: County of Los Angeles Homeless Shelters and Services feature service</span>
+          </article>
+          <div class="chart-wrap"><canvas id="categoryChart"></canvas></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container grid two">
+          <div class="chart-wrap"><canvas id="cityRecordsChart"></canvas></div>
+          <article>
+            <h2>Where records cluster</h2>
+            <p class="intro">Los Angeles has the largest cluster of mapped records, followed by Long Beach, Lancaster, Pasadena, and Hollywood. The pattern reflects where the public 211/County service layer has visible entries.</p>
+          </article>
+        </div>
+      </section>
+      <section class="section off">
+        <div class="container grid two">
+          <article>
+            <h2>How fresh is each public source?</h2>
+            <p class="intro">Homeless Count data is annual, system KPIs are quarterly, interim-housing reporting is monthly, and Pathway Home reporting is delayed by several days.</p>
+          </article>
+          <div class="chart-wrap"><canvas id="cadenceChart"></canvas></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="method">
+            <h2>Public capacity tools</h2>
+            <p class="intro">LAHSA has announced provider-network access to real-time interim-housing bed availability, but Bridge LA does not expose that private provider system; public users can review LAHSA public reports, seasonal 211 winter shelter guidance, and the LA Controller’s shelter bed demo map.</p>
+            <div class="actions">
+              <a class="button secondary" href="https://www.lahsa.org/news?article=1004-lahsa-launches-system-for-real-time-tracking-of-ih-bed-availability">LAHSA real-time announcement</a>
+              <a class="button secondary" href="https://www.lahsa.org/data-refresh">LAHSA Data Refresh</a>
+              <a class="button secondary" href="https://shelterbeds.lacontroller.app/">Controller demo map</a>
+            </div>
           </div>
         </div>
       </section>
