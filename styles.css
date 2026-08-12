@@ -327,6 +327,12 @@ p { margin: 0; }
   margin-top: 1.25rem;
 }
 
+.pressure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
 .stat-value {
   display: block;
   color: var(--black);
@@ -854,7 +860,7 @@ input, select, textarea {
   .two, .three, .four, .map-layout, .donation-box, .footer-inner, .human-story {
     grid-template-columns: 1fr;
   }
-  .path-grid, .resource-toolbar, .form-grid, .resource-preview, .help-tonight {
+  .path-grid, .resource-toolbar, .form-grid, .resource-preview, .help-tonight, .pressure-grid {
     grid-template-columns: 1fr;
   }
   .home-hero {

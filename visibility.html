@@ -14,15 +14,15 @@
       <section class="container page-hero">
         <p class="eyebrow">Public indicators</p>
         <h1 class="page-title">What the public data can show right now.</h1>
-        <p class="intro">This page summarizes LAHSA 2026 totals and mapped service records. It also links to the closest real-time capacity work I could verify, while making clear Bridge LA does not have a public live bed feed.</p>
+        <p class="intro">This page brings together LAHSA 2026 totals, mapped service records, and public dashboard update schedules so the resource landscape is easier to compare.</p>
       </section>
       <section class="section">
         <div class="container grid four" id="visibility-stats"></div>
       </section>
       <section class="container">
         <div class="trust-banner">
-          <strong>Data honesty:</strong>
-          <span>These numbers are source-backed counts or clearly labeled derived indicators, not live resource availability.</span>
+          <strong>Availability note:</strong>
+          <span>Provider records show where services exist. For open beds, appointments, or wait times, call the provider or 211 LA.</span>
           <button type="button" data-source-open data-source-title="Dashboard data limits" data-source-body="Bridge LA uses LAHSA totals and public LA County/211 resource records. It does not display live beds, open appointments, or wait times because those values are not verified in the public datasets used here.">Source note</button>
         </div>
       </section>
@@ -41,33 +41,24 @@
           <div class="chart-wrap"><canvas id="cityRecordsChart"></canvas></div>
           <article>
             <h2>Where records cluster</h2>
-            <p class="intro">A top-city chart shows that records are not evenly distributed. That does not prove need is lower elsewhere; it shows where this public source has more visible entries.</p>
+            <p class="intro">Los Angeles has the largest cluster of mapped records, followed by Long Beach, Lancaster, Pasadena, and Hollywood. The pattern reflects where the public 211/County service layer has visible entries.</p>
           </article>
         </div>
       </section>
       <section class="section off">
         <div class="container grid two">
           <article>
-            <h2>Dashboard update speed matters</h2>
-            <p class="intro">Public dashboards update on different schedules. Annual, quarterly, monthly, and delayed-live reporting should not be treated like the same kind of information.</p>
+            <h2>How fresh is each public dashboard?</h2>
+            <p class="intro">Homeless Count data is annual, system KPIs are quarterly, interim-housing dashboards are monthly, and Pathway Home reporting is delayed by several days.</p>
           </article>
           <div class="chart-wrap"><canvas id="cadenceChart"></canvas></div>
         </div>
       </section>
       <section class="section">
-        <div class="container grid two">
-          <div class="chart-wrap"><canvas id="riskChart"></canvas></div>
-          <article>
-            <h2>How risky is each evidence type?</h2>
-            <p class="intro">This prototype now distinguishes between clear counts, incomplete service records, delayed capacity dashboards, and personal stories. They are all useful, but each needs different labels.</p>
-          </article>
-        </div>
-      </section>
-      <section class="section">
         <div class="container">
           <div class="method">
-            <h2>Real-time capacity tracking reality check</h2>
-            <p class="intro">LAHSA has announced provider-network access to real-time interim-housing bed availability, but Bridge LA did not find a public live API that can be embedded safely. LAHSA’s public dashboard refreshes monthly, 211’s Winter Shelter page gives seasonal availability instructions, and the LA Controller has a public demo map for bed availability.</p>
+            <h2>Public capacity tools</h2>
+            <p class="intro">LAHSA has announced provider-network access to real-time interim-housing bed availability. Public users can also review LAHSA dashboards, seasonal 211 winter shelter guidance, and the LA Controller’s shelter bed demo map.</p>
             <div class="actions">
               <a class="button secondary" href="https://www.lahsa.org/news?article=1004-lahsa-launches-system-for-real-time-tracking-of-ih-bed-availability">LAHSA real-time announcement</a>
               <a class="button secondary" href="https://www.lahsa.org/data-refresh">LAHSA Data Refresh</a>
@@ -80,10 +71,10 @@
         <div class="container grid two">
           <article>
             <h2>Bridge LA resource-access indicator</h2>
-            <p class="intro">For this static prototype, Bridge LA labels areas with fewer mapped resources near high-need homelessness/poverty geographies as a derived indicator only. It is not an official government designation, and poverty tract values are not substituted if the Census API cannot load.</p>
+            <p class="intro">Resource access depends on both geography and service type. A neighborhood may have many records but still lack the exact shelter, mental-health, or healthcare option someone needs that night.</p>
           </article>
           <article class="story-card">
-            <p>Danielle’s story belongs on this page too: a dashboard that cannot help someone take the next step is just a wall of numbers. That is why Bridge LA separates public indicators from live availability and points people back to call/directions actions.</p>
+            <p>Danielle’s story gives these indicators a human anchor: the goal is not only to count services, but to make the next phone call or route easier to find.</p>
             <a href="stories.html">Read more stories</a>
           </article>
         </div>
@@ -93,13 +84,13 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">From indicators to action</p>
-              <h2>Questions this page can answer honestly</h2>
+              <h2>Questions the dashboard raises</h2>
             </div>
           </div>
           <div class="grid three">
-            <article class="card"><h3>Where are services clustered?</h3><p>Compare service categories against the map instead of assuming every neighborhood has equal access.</p></article>
-            <article class="card"><h3>What is missing?</h3><p>If a page cannot verify current beds, wait times, or open appointments, it should say so plainly.</p></article>
-            <article class="card"><h3>Who needs a call?</h3><p>Use provider contact information on the Resources page for current availability because static public data cannot confirm it.</p></article>
+            <article class="card"><h3>Where are services clustered?</h3><p>Most visible records cluster in Los Angeles, with smaller groups in Long Beach, Lancaster, Pasadena, Hollywood, and Santa Monica.</p></article>
+            <article class="card"><h3>Which category dominates?</h3><p>Shelter records make up most of the mapped entries, while healthcare entries are much less common in this dataset.</p></article>
+            <article class="card"><h3>Who needs a call?</h3><p>Anyone seeking a bed, appointment, or same-day help still needs provider contact information because public records are not live availability.</p></article>
           </div>
         </div>
       </section>

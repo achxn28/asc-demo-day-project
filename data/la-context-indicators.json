@@ -24,11 +24,5 @@
     { "label": "System KPI", "days": 90 },
     { "label": "Interim Housing", "days": 30 },
     { "label": "Pathway Home delay", "days": 4 }
-  ],
-  "interpretationRisks": [
-    { "label": "Point-in-time count", "risk": 75, "clarity": 70 },
-    { "label": "Public service records", "risk": 58, "clarity": 82 },
-    { "label": "Capacity dashboards", "risk": 68, "clarity": 55 },
-    { "label": "Personal stories", "risk": 45, "clarity": 92 }
   ]
 }

@@ -12,7 +12,6 @@ const sheltered = city.totalHomelessPopulation - city.unshelteredPopulation;
 const pct = unshelteredPercent(summary);
 const orange = '#f46524';
 const black = '#000000';
-const gray = '#dedbd5';
 
 document.querySelector('#story-stats').innerHTML = [
   [`${city.totalHomelessPopulation.toLocaleString()}`, 'estimated people experiencing homelessness in the City of Los Angeles'],
@@ -139,44 +138,6 @@ new Chart(document.querySelector('#shareChart'), {
             return `${context.label}: ${value.toLocaleString()} people`;
           }
         }
-      }
-    }
-  }
-});
-
-new Chart(document.querySelector('#pressureChart'), {
-  type: 'polarArea',
-  data: {
-    labels: context.housingPressure.map((item) => item.label),
-    datasets: [{
-      data: context.housingPressure.map((item) => item.value),
-      backgroundColor: [
-        'rgba(244, 101, 36, 0.88)',
-        'rgba(0, 0, 0, 0.86)',
-        'rgba(120, 120, 120, 0.78)',
-        'rgba(184, 74, 22, 0.84)'
-      ],
-      borderColor: '#ffffff',
-      borderWidth: 3
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { position: 'bottom' },
-      tooltip: {
-        callbacks: {
-          label(context) {
-            const item = context.chart.data.labels[context.dataIndex];
-            return `${item}: ${context.raw}%`;
-          }
-        }
-      }
-    },
-    scales: {
-      r: {
-        ticks: { backdropColor: 'transparent', callback: (value) => `${value}%` }
       }
     }
   }
