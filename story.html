@@ -57,6 +57,34 @@
           </div>
         </div>
       </section>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Data transparency</p>
+              <h2>Checks behind the claims</h2>
+            </div>
+          </div>
+          <div class="grid two">
+            <article class="card accordion" data-accordion open>
+              <button><span class="badge">Reviewed</span><h3>Shelter inventory vs. availability</h3></button>
+              <div class="accordion-body"><p>LAHSA inventory records do not prove which beds are open right now. Bridge LA sends users to providers or 211 LA for current availability instead of showing fake live capacity.</p><span class="source">Latest review: 2026-08-11</span></div>
+            </article>
+            <article class="card accordion" data-accordion>
+              <button><span class="badge">Needs source access</span><h3>Poverty tract data</h3></button>
+              <div class="accordion-body"><p>Census S1701 is the correct source for poverty rates. If the API cannot load, the interface should show an error instead of substituting invented tract values.</p><span class="source">Latest review: 2026-08-11</span></div>
+            </article>
+            <article class="card accordion" data-accordion>
+              <button><span class="badge">Reviewed</span><h3>Service location records</h3></button>
+              <div class="accordion-body"><p>Resource cards come from the Los Angeles County public ArcGIS feature service and keep source-provided fields visible.</p><span class="source">Latest review: 2026-08-11</span></div>
+            </article>
+            <article class="card accordion" data-accordion>
+              <button><span class="badge">Prototype</span><h3>Donation impact reporting</h3></button>
+              <div class="accordion-body"><p>The donation flow is labeled as a demo. It does not claim money was processed, allocated, or converted into unsupported real-world outcomes.</p><span class="source">Latest review: 2026-08-11</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
     <script type="module" src="js/story.js"></script>
     <script src="script.js"></script>

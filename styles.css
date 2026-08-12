@@ -26,7 +26,7 @@ a { color: inherit; }
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 1200;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -357,7 +357,7 @@ p { margin: 0; }
 .resource-toolbar {
   position: sticky;
   top: 76px;
-  z-index: 10;
+  z-index: 900;
   display: grid;
   grid-template-columns: minmax(220px, 1fr) 220px minmax(160px, 0.4fr);
   gap: 0.75rem;
@@ -442,6 +442,7 @@ input, select, textarea {
 
 .leaflet-container {
   font-family: Inter, Arial, Helvetica, sans-serif;
+  z-index: 1;
 }
 
 .resource-map-marker {
